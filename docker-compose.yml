@@ -1,0 +1,20 @@
+services:
+  nestjs-app:
+    build:
+      context: project
+      dockerfile: ./Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: production
+    working_dir: /usr/src/app
+    command: yarn start:dev
+    develop:
+      watch:
+        - action: sync
+          path: ./project
+          target: /usr/src/app
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: ./project/package.json
