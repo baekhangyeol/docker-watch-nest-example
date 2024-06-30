@@ -1,2 +1,6 @@
 # docker-watch-nest-example
-Docker Watch를 적용한 Nest.js와 MySQL 예제
+Docker watch를 사용해서 Nest.js를 hot reload하게 해보자
+
+## 사용법
+```bash'
+docker-compose up --watch
